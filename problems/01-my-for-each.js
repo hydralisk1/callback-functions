@@ -21,11 +21,21 @@ myForEach(['laika', 'belka'], function (el) {
 console.log(test); // ['LAIKA', 'BELKA']
 *******************************************************************************/
 
-let myForEach = function() {
-
+// 1. receiving some elements
+let myForEach = function(arr, cb) {
+    // 2. iterate from 0 to arr.length - 1
+    for(let i = 0; i < arr.length; i++){
+        // 3. run the callback function received
+        cb(arr[i], i, arr)
+    }
 };
 
 
+let test = [];
+myForEach(['laika', 'belka'], function (el) {
+    test.push(el.toUpperCase());
+});
+console.log(test); // ['LAIKA', 'BELKA']
 
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
